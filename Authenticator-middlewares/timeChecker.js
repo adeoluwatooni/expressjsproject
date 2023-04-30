@@ -1,12 +1,12 @@
 const timeChecker = (req, res, next) => {
   
-  const date = Date();
-  let dayOfTheWeek = date.getDay();
-  let hourOfTheday = date.getHours();
+  const d = new Date();
+  let dayOfTheWeek = d.getDay();
+  let hourOfTheday = d.getHours();
 
   //To check if the user is accessing during the week
   if (dayOfTheWeek === 0 || dayOfTheWeek === 6 ){
-    return res.status(403).send("Sorry, Agba Dev's site only available during weekdays")
+    return res.status(403).send("Sorry, Agba Dev's site only available on weekdays")
     console.log("Site Uvailable");
   }
 
@@ -47,3 +47,5 @@ module.exports = timeChecker;
 //     res.render('home', { title: 'Home' });
 //   }
 // });
+
+// module.exports = timeChecker;
